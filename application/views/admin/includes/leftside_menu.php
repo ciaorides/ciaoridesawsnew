@@ -79,16 +79,16 @@
                         <a href="javascript:void(0)"><i class="fa fa-car"></i><span>City Management</span></a>
                         <div class="submenu-content">
                             <?php if(!empty($roleResponsible['city_rides'])){ ?>
-                            <a href="<?php echo base_url().'admin/city_management/rides/car'?>" class="menu-item  <?= ($uri == 'all_users' ) ? 'active' : '' ?>"><span class="fa fa-car  active "></span>&nbsp;&nbsp; Rides (Car, Auto & Bike) </a>
+                            <a href="<?php echo base_url().'admin/city_management/rides/car'?>" class="menu-item  <?= ($uri == 'rides' ) ? 'active' : '' ?>"><span class="fa fa-car  active "></span>&nbsp;&nbsp; Rides (Car, Auto & Bike) </a>
                             <?php }?>
                             <?php if(!empty($roleResponsible['city_bookings'])){ ?>
-                            <a href="<?php echo base_url().'admin/city_management/bookings/car'?>" class="menu-item   <?= ($uri == 'user_bank_details' ) ? 'active' : '' ?>"><span class="fa fa-car  active"></span>&nbsp;&nbsp; Bookings (Car, Auto & Bike) </a>  
+                            <a href="<?php echo base_url().'admin/city_management/bookings/car'?>" class="menu-item   <?= ($uri == 'bookings' ) ? 'active' : '' ?>"><span class="fa fa-car  active"></span>&nbsp;&nbsp; Bookings (Car, Auto & Bike) </a>  
                             <?php }?>
                             <?php if(!empty($roleResponsible['city_cancellation'])){ ?>
-                            <a href="" class="menu-item   <?= ($uri == 'user_bank_details' ) ? 'active' : '' ?>"><span class="fa fa-car  active"></span>&nbsp;&nbsp; Cancellation (Car, Auto & Bike) </a>  
+                            <a href="<?php echo base_url().'admin/city_management/city_cancellation/car'?>" class="menu-item   <?= ($uri == 'city_cancellation' ) ? 'active' : '' ?>"><span class="fa fa-car  active"></span>&nbsp;&nbsp; Cancellation (Car, Auto & Bike) </a>  
                             <?php }?>
                             <?php if(!empty($roleResponsible['city_refunds'])){ ?> 
-                            <a href="" class="menu-item   <?= ($uri == 'user_bank_details' ) ? 'active' : '' ?>"><span class="fa fa-car  active"></span>&nbsp;&nbsp; Refunds (Car, Auto & Bike) </a>
+                            <a href="" class="menu-item   <?= ($uri == 'city_refunds' ) ? 'active' : '' ?>"><span class="fa fa-car  active"></span>&nbsp;&nbsp; Refunds (Car, Auto & Bike) </a>
                             <?php }?>
                        
                         </div>

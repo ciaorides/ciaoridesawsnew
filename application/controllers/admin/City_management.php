@@ -147,6 +147,42 @@ public function bookings_excel_export($type) {
         redirect(base_url() . 'register/otherorders');
     }
 
+
+    /* ----------- city cancellation -------------- */
+
+    public function city_cancellation($type) {
+        
+        //echo '<pre>';print_r('123');exit;
+        $this->data['type']=$type;
+        if($type == 'car'){  
+          $named_type='Car'; 
+         }else if($type == 'bike'){
+            $named_type='Bike'; 
+         }else{
+            $named_type='Auto'; 
+         }
+        $this->data['named_type']=$named_type; 
+        $this->load->view('admin/includes/header', $this->data);
+        $this->load->view('admin/city_management/city_cancellation', $this->data);
+        $this->load->view('admin/includes/footer', $this->data);
+   
+    }
+
+
+    public function get_all_city_cancellation() {
+        $instantorders = $this->my_model->all_city_cancellation($_POST);
+        $result_count = $this->my_model->all_city_cancellation($_POST, 1);
+        $json_data = array(
+            "draw" => intval($_POST['draw']),
+            "iTotalRecords" => intval($result_count),
+            "iTotalDisplayRecords" => intval($result_count),
+            "recordsFiltered" => intval(count($instantorders)),
+            "data" => $instantorders);
+        echo json_encode($json_data);
+    }
+
+/* ----------- End city cancellation -------------- */
+
      public function is_logged_in() {
         $is_logged_in = $this->session->userdata('is_logged_in');
         if (!isset($is_logged_in) || $is_logged_in != true) {
