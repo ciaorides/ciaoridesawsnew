@@ -8,6 +8,8 @@ class Home extends CI_Controller {
     public $header = 'website/includes/header';
     public $footer = 'website/includes/footer';
 
+    //public $footer1 = 'website/includes/footer1';
+
     function __construct() {
         parent::__construct();
         $this->load->model('homemodel');
